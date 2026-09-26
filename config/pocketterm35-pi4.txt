@@ -1,0 +1,11 @@
+# Reference fragment only; merge into the existing Zynthian config.
+# Tested host: Raspberry Pi 4. Do not apply this Pi 4 recipe to a Pi 5.
+# The custom DTBO must exist in the active boot overlays directory first.
+[all]
+dtparam=i2c_arm=on
+dtoverlay=pocketterm-touch-5d
+dtoverlay=dwc2,dr_mode=host
+
+# Replace the original dtoverlay=waveshare-35dpi-4b line.
+# Do not load both touch overlays.
+# Keep existing Zynthian audio, MIDI, display and model-specific settings.
